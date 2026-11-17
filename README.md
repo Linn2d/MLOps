@@ -28,9 +28,9 @@ This project is a demonstration of an MLOps pipeline for predicting the class of
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run Locally
 
-To run this project, you will first need to have Docker Desktop installed on your machine (https://www.docker.com/products/docker-desktop/).
+To run this project on your own machine, you will first need Docker Desktop installed (https://www.docker.com/products/docker-desktop/).
 
 
 ### 1. Clone the repo
@@ -53,6 +53,19 @@ This will:
 - Launch the Streamlit app at `http://localhost:8501`
 
 ---
+
+## ☁️ Online Deployment
+
+If you don't want to install anything, I also deployed the app online. You can try it [here](https://ebm9uhz3xtkdxtruf5kwri.streamlit.app/).
+
+It is split into two services:
+
+- the **FastAPI server** is hosted on [Render](https://render.com) (built from `server/Dockerfile`)
+- the **Streamlit client** is hosted on [Streamlit Community Cloud](https://streamlit.io/cloud)
+
+Both redeploy automatically on every push to `main`. The client finds the API through the `API_URL` setting (environment variable or Streamlit secret).
+
+> ⏳ The API runs on Render's free tier and goes to sleep after about 15 minutes of inactivity. The first prediction may take 30 to 60 seconds while it wakes up.
 
 ## 🖼️ Interface Overview
 
