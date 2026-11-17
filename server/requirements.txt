@@ -2,5 +2,3 @@ fastapi
 pydantic
 uvicorn
 scikit-learn==1.5.2
-requests
-streamlit
